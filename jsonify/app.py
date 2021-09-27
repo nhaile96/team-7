@@ -57,6 +57,8 @@ def info_etf():
         row["fund_return_10years"]=result[7]
         row["net_asset_value"]=result[8]
         etf_total.append(row)
+    
+    return jsonify(etf_total)
 
 @app.route("/api/v1.0/mutualfunds_info")
 def mf_info():
@@ -77,3 +79,12 @@ def mf_info():
         row["fund_return_10years"]=result[7]
         row["net_asset_value"]=result[8]
         mf_total.append(row)
+    
+    return jsonify(mf_total)
+
+
+
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
