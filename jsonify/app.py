@@ -23,7 +23,6 @@ mf_df_class= Base.classes.mf_df_top100
 etf_df_class=Base.classes.etf_df_top100
 
 session=Session(engine)
-
 # flask set up
 
 app= Flask(__name__)
