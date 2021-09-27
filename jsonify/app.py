@@ -82,6 +82,7 @@ def mf_info():
         mf_total.append(row)
     
     return jsonify(mf_total)
+    
 
 
 
