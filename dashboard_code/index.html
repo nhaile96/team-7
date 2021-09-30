@@ -22,12 +22,12 @@
             <div class="col-md-2">
                 <div class="well">
                     <h5>ETF or Mutual Fund Selector:</h5>
-                    <select id="selDataset" onchange="optionChanged(this.value)"></select>
+                    <select id="selDataset1" onchange="option1Changed(this.value)"></select>
                 </div>
                 <div class="well">
                     <h5>Investment Type:</h5>
                     <!-- The id naming probably needs to be changed so that its not the same as the first. -->
-                    <select id="selDataset" onchange="optionChanged(this.value)"></select>
+                    <select id="selDataset2" onchange="option2Changed(this.value)"></select>
                 </div>
                 <div class="panel panel-primary">
                     <div class="panel-heading">
@@ -52,7 +52,8 @@
 
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <script src="./jasonify/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="/dashboard_code/static/app.js"></script>
 
 
 </body>
