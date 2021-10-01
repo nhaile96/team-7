@@ -49,50 +49,42 @@ function init(){
 }
 
 function createETForMFinfo(option1,option2){
-    var fund_name= [];
-    var inception_date=[];
-    var size_type=[];
-    var net_asset_value=[];
-    var investment_type=[];
-  
-
+    
     if(option1=="ETF"){
+        var index=[];
         d3.json("../dashboard_code/etf_top100_1.json").then((etf_top100) => {  
-            var fund_name = etf_top100.map(function(fund, i){
-                if(fund.investment_type == option2){
-                    return fund.fund_name;
-                }
-            });
-            var inception_date = etf_top100.map(function(fund, i){
-                if(fund.investment_type == option2){
-                    return fund.inception_date;
-                }
-            });
-            var size_type = etf_top100.map(function(fund, i){
-                if(fund.investment_type == option2){
-                    return fund.size_type;
-                }
-            });
-            var net_asset_value = etf_top100.map(function(fund, i){
-                if(fund.investment_type == option2){
-                    return fund.net_asset_value;
-                }
-            });
-            var investment_type = etf_top100.map(function(fund, i){
-                if(fund.investment_type == option2){
-                    return fund.investment_type;
-                }
-            });
-                                    
-            var result= etf_top100[0];
+           
+            var tenYear=etf_top100;                        
+            var result= tenYear.sort((a, b) => b.fund_return_10years - a.fund_return_10years);
+            // console.log(result);
             var panel= d3.select("#sample-metadata");
             panel.html("");
-            Object.entries(result).forEach(([key, value])=>
+            Object.entries(result[0]).forEach(([key, value])=>
                 panel.append("h6").text(`${key}:${value}`))
         
         
         });    
     }
+    if(option1=="Mutual Fund"){
+        var index=[];
+        d3.json("../dashboard_code/mutual_funds_top100_1.json").then((etf_top100) => {  
+           
+                                    
+            var tenYear2= etf_top100;
+            var result= tenYear2.sort((a, b) => b.fund_return_10years - a.fund_return_10years);
+            // console.log(result);
+            var panel= d3.select("#sample-metadata");
+            panel.html("");
+            Object.entries(result[0]).forEach(([key, value])=>
+                panel.append("h6").text(`${key}:${value}`))
+        
+        
+        });    
+    }
+
+
+
+
 }       
 
 
@@ -189,7 +181,8 @@ function createBarChart(option1,option2) {
 // runApp();
 
 function option1Changed(option1) {
-    return createBarChart(option1,"Growth"); 
+    createBarChart(option1,"Growth");
+    createETForMFinfo(option1,"Growth"); 
 }                         
 
 function option2Changed(option2) {
@@ -197,11 +190,53 @@ function option2Changed(option2) {
 //     var option1 = d3.select("selDataset1").values();
 //         document.getElementById("selDataset1").values();
 //     console.log(option1);
-    return createBarChart("ETF",option2);
-}
-function option1Changed(option1){
-    createETForMFinfo(option1,"Growth");
-}
-function option2Changed(option2){
+    createBarChart("ETF",option2);
     createETForMFinfo("ETF",option2);
 }
+// function option1Changed(option1){
+//     createETForMFinfo(option1,"Growth");
+// }
+// function option2Changed(option2){
+//     createETForMFinfo("ETF",option2);
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ // var fund_name = etf_top100.map(function(fund, i){
+            //     if(fund.investment_type == option2){
+            //         return fund.fund_name;
+            //     }
+            // });
+            // var inception_date = etf_top100.map(function(fund, i){
+            //     if(fund.investment_type == option2){
+            //         return fund.inception_date;
+            //     }
+            // });
+            // var size_type = etf_top100.map(function(fund, i){
+            //     if(fund.investment_type == option2){
+            //         return fund.size_type;
+            //     }
+            // });
+            // var net_asset_value = etf_top100.map(function(fund, i){
+            //     if(fund.investment_type == option2){
+            //         return fund.net_asset_value;
+            //     }
+            // });
+            // var investment_type = etf_top100.map(function(fund, i){
+            //     if(fund.investment_type == option2){
+            //         return fund.investment_type;
+            //     }
+            // });
