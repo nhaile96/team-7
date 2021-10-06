@@ -1,33 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ETFs VS Mutual Funds</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-</head>
-
-<body>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 jumbotron text-center">
-                <h1>ETF and Mutual Funds Dashboard</h1>
-                <p>Use the interactive charts below to explore the dataset</p>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>ETF's vs Mutual Funds</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+            <div class="container px-4">
+                <a class="navbar-brand" href="#page-top">Team 7</a>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="well">
+        </nav>
+        <!-- Header-->
+        <header class="bg-primary bg-gradient text-white">
+            <div class="container px-4 text-center">
+                <h1 class="fw-bolder">Best Investments Dashboard</h1>
+                <p class="lead">ETF's vs. Mutual Funds</p>
+                <!-- <a class="btn btn-lg btn-light" href="#about">Start scrolling!</a> -->
+            </div>
+        </header>
+        <!-- About section-->
+        <section id="about">
+            <div class="container px-4">
+                <div class="row gx-4 justify-content-center">
+                    <div class="col-lg-8">
+                        <h2>What Is The Difference Between Mutual Funds and ETF's?</h2>
+                        <p class="lead">ETF's or exchange-traded funds are traded on exchanges by anyone from a regular investor to a fund manager.  They are a basket of securities or companies in a certain sector or with certain criteria that allows investors lower risk with more reward over time.</p>
+                        <p class="lead">Mutual Funds are business's that manage clients money for the individual investor.  These portfolio managers select a combination of compannies to invest in with a goal to have better returns than ETF's and index's, as well as tailor these picks around the investors profile.  These benefit comes with a large minimum deposit and a certain holding period of clients money.  Mutual Funds spend a lot of money on analyst, economic and industry research, as well as CEO meetings.  These are some reasons that make Mutual Funds very lucrative.</p>
+                        <h2>Difference Between Growth, Value, and Blend Strategies</h2>
+                        <p class="lead">Growth investing is focused on young or small companies who have expected earnings growth and are expected to grow at an above-average rate compared to their industry sector.  Growth investors look at companies poised to expand and increase profitability potential in the future.</p>
+                        <p class="lead">Value investing is involved with picking stocks that are trading for less value than what is on paper, basically the under-valued.  Value investors tend to focus on financial analysis as the foundation of their conclusions.</p>
+                        <p class="lead">Blend investing is intuitive in it's name, they are a category that invest in both growth and value stocks.  the goal behind a blend strategy is to have a diversified portfolio that takes advantage of the capital gains potential of the growth segment and dividend income of the value segment.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Services section-->
+        <section class="bg-light" id="services">
+            <div class="container px-12">
+                <div class="row gx-12 justify-content-left">
+                    <div class="col-lg-6">
                     <h5>ETF or Mutual Fund Selector:</h5>
                     <select id="selDataset1" onchange="option1Changed(this.value)"></select>
                 </div>
-                <div class="well">
+                <div class="row gx-12 justify-content-left">
+                    <div class="col-lg-6">
                     <h5>Investment Type:</h5>
                     <!-- The id naming probably needs to be changed so that its not the same as the first. -->
                     <select id="selDataset2" onchange="option2Changed(this.value)"></select>
+                
+                
                 </div>
                 <div class="panel panel-primary">
                     <div class="panel-heading">
@@ -36,7 +64,7 @@
                     <div id="sample-metadata" class="panel-body"></div>
                 </div>
             </div>
-            <div class="col-md-5">
+            <div class="col-md-12">
                 <div id="bar"></div>
             </div>
             
